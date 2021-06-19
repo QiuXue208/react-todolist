@@ -1,9 +1,10 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import { reducer as todoReducer } from './todos/reducer';
+import { reducer as filterReducer } from './filter/reducer';
 
-const store = {
-  getState: () => {},
-  dispatch: () => {},
-  subscribe: () => {},
-};
+const reducers = combineReducers({
+  todos: todoReducer,
+  filter: filterReducer,
+});
 
-export default store;
+export default createStore(reducers);
