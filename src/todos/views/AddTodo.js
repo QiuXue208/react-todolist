@@ -27,10 +27,14 @@ class AddTodo extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <input ref={this.refInput} />
-        <button type="submit">添加</button>
-      </form>
+      <div className="add-todo">
+        <form onSubmit={this.onSubmit}>
+          <input className="new-todo" ref={this.refInput} />
+          <button className="add-btn" type="submit">
+            添加
+          </button>
+        </form>
+      </div>
     );
   }
 }

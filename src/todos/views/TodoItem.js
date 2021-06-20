@@ -2,19 +2,13 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 function TodoItem({ text, completed, onToggle, onRemove }) {
-  const checkedProp = completed ? { checked: true } : {};
+  const checkedProp = completed ? { checked: 'checked' } : {};
   return (
     <li
       className="todo-item"
       style={{ textDecoration: completed ? 'line-through' : 'none' }}
     >
-      <input
-        className="toggle"
-        type="checkbox"
-        {...checkedProp}
-        readOnly
-        onClick={onToggle}
-      />
+      <input type="checkbox" {...checkedProp} readOnly onClick={onToggle} />
       <label className="text">{text}</label>
       <button className="remove" onClick={onRemove}>
         ×

@@ -6,15 +6,19 @@ import { toggleTodo, removeTodo } from '../Actions';
 // import { bindActionCreators } from 'redux';
 
 function TodoList({ todos, onRemove, onToggle }) {
-  return todos.map((todo) => (
-    <TodoItem
-      key={todo.id}
-      text={todo.text}
-      completed={todo.completed}
-      onRemove={() => onRemove(todo.id)}
-      onToggle={() => onToggle(todo.id)}
-    />
-  ));
+  return (
+    <ul className="todo-list">
+      {todos.map((item) => (
+        <TodoItem
+          key={item.id}
+          text={item.text}
+          completed={item.completed}
+          onToggle={() => onToggle(item.id)}
+          onRemove={() => onRemove(item.id)}
+        />
+      ))}
+    </ul>
+  );
 }
 
 function selectedTodos(todos, filter) {
