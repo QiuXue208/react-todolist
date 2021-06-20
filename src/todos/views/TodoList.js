@@ -6,6 +6,7 @@ import { toggleTodo, removeTodo } from '../Actions';
 // import { bindActionCreators } from 'redux';
 
 function TodoList({ todos, onRemove, onToggle }) {
+  console.log(todos);
   return (
     <ul className="todo-list">
       {todos.map((item) => (
@@ -26,9 +27,9 @@ function selectedTodos(todos, filter) {
     case FilterTypes.ALL:
       return todos;
     case FilterTypes.COMPLETED:
-      return todos.map((item) => item.completed);
+      return todos.filter((item) => item.completed);
     case FilterTypes.UNCOMPLETED:
-      return todos.map((item) => !item.completed);
+      return todos.filter((item) => !item.completed);
     default:
       throw new Error('不支持的filter');
   }
