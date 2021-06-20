@@ -12,6 +12,8 @@ function Link({ active, children, onClick }) {
         className="filter not-selected"
         onClick={(ev) => {
           ev.preventDefault();
+          console.log('onclick');
+          console.log(onClick);
           onClick();
         }}
       >
