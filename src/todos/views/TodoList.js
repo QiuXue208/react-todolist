@@ -2,8 +2,8 @@ import React from 'react';
 import TodoItem from './TodoItem';
 import { FilterTypes } from '../../constants';
 import { connect } from 'react-redux';
-import { toggleTodo, removeTodo } from '../actions';
-import { bindActionCreators } from 'redux';
+import { toggleTodo, removeTodo } from '../Actions';
+// import { bindActionCreators } from 'redux';
 
 function TodoList({ todos, onRemove, onToggle }) {
   return todos.map((todo) => (
@@ -19,14 +19,14 @@ function TodoList({ todos, onRemove, onToggle }) {
 
 function selectedTodos(todos, filter) {
   switch (filter) {
-    case FilterTypes.All:
+    case FilterTypes.ALL:
       return todos;
     case FilterTypes.COMPLETED:
       return todos.map((item) => item.completed);
     case FilterTypes.UNCOMPLETED:
       return todos.map((item) => !item.completed);
     default:
-      throw Error('不支持的filter');
+      throw new Error('不支持的filter');
   }
 }
 

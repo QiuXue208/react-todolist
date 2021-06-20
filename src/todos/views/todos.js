@@ -1,6 +1,6 @@
 import React from 'react';
-import AddTodo from './addTodo.js';
-import TodoList from './todoList.js';
+import AddTodo from './AddTodo.js';
+import TodoList from './TodoList.js';
 
 import './style.css';
 function Todos() {
